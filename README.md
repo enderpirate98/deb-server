@@ -23,4 +23,22 @@ Step 3: Disable Secure Boot and Boot into your Flash Drive, again if you don't k
 
 Step 4: Install Debian: 
 
-Click on the ```Graphical Install``` option, click on your preferred Language, Select your country of residence, select your preferred keyboard layout, and select your network interface (do the wired one if you have access to ethernet) 
+Click on the ``Graphical Install`` option, click on your preferred Language, Select your country of residence, select your preferred keyboard layout, and select your network interface (do the wired one if you have access to ethernet) 
+
+your hostname should be something recognizable such as ``home-server`` or something like that, leave the domain name blank (we don't need it), for security reasons we won't enable the root user so just leave the password blank, type whatever you want for your user and choose a secure password to go with it.
+
+Select your timezone and select the ``Guided - Use entire Disk`` option, select the drive that you want all of this on (I recommend using an SSD for performance reasons if you have one)
+
+Put all the files into one partition for simplicity, it will give you a summary of what it is about to do to your disk (Make sure all important data is backed up first before erasing the disk)
+
+If everything looks good then finish partitioning and hit yes.
+
+Select your country again and select ``deb.debian.org`` unless you know of a mirror closer to you, leave the proxy blank becuase you can access the internet just fine without it, the popularity contest is just a service on your system that tells the Debian Devs which packages you use most so that they can prioritize the ones the community uses most, you can say yes or no to this.
+
+Deselect ``Debian Desktop Environment`` and ``Gnome``, select ``SSH server`` since we will use that later
+
+Everything will install and you should unplug the flash drive and hit continue to reboot
+
+## Section 2: Post install configuration
+
+I need to follow my own steps and do stuff in a vm to make sure everything is good.
