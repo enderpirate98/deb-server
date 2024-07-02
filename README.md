@@ -41,4 +41,34 @@ Everything will install and you should unplug the flash drive and hit continue t
 
 ## Section 2: Post install configuration
 
-I need to follow my own steps and do stuff in a vm to make sure everything is good.
+You should now be put into a terminal interface with nothing but text, don't worry you won't be here long. Log in with the username and password that you set up earlier and type the words: ``ip a``, write down the ip address next to the lower ``inet`` as we will be using that a lot later.
+
+Type ``exit`` and disconnect the monitor, keyboard and mouse. You can now run the system headless!
+
+Assuming that you have access to your router go to ``http://192.168.1.1`` in your web browser and log into the web interface of the router, google how to assign a static ip on your perticular router to your new server, the reason for getting a static ip is that by default the ip of the server could change randomly at any point and then you can't access the services running on the server until you figure out the new ip so a static ip fixes this by assigning a perminant ip that the server can use for the rest of time.
+
+After that is done open up the terminal on your computer and type ``ssh user@192.168.1.182`` replace the user with your username that you setup on the server and replace the 192.168.1.182 with the ip of your server that you wrote down, this allows you to remotely connect to the terminal of the server, you are probably sick of the terminal by now but after these few commands you will have a nice GUI web interface that you can manage everything from!
+```
+sudo apt update && sudo apt upgrade && sudo apt install curl
+```
+This command that you can now copy and paste into the terminal checks for any system updates and applies them if any are found, it also installs a program called ``curl`` that will help in a minute
+``
+curl -fsSL https://get.casaos.io | sudo bash
+``
+This installs the CasaOS web interface and Docker
+```
+reboot
+```
+Reboots the system to make sure that all updates and additonal programs are applied to the system before we move on
+
+The reboot will close your ssh connection to the server and you can close it, in your web browser open a new tab and go to ``http://192.168.1.182`` replacing my ip with yours
+
+Set your username and password and welcome to CasaOS!
+
+This Web GUI allows you to install some Docker containers easily from the app store and if you need the terminal or to reboot the system you can hit the settings gear icon and access them easily!
+
+To prepare for future guides where the Docker apps aren't part of the CasaOS app store we will manually install them through portainer so install that and setup a username and password.
+
+Congrats! You have just laid the foundation for having the ultimate home server!
+
+This guide was written by enderpirate98 under the GPLv3 but you can freely modify this guide and use it how you like as long as you link back to this page.
