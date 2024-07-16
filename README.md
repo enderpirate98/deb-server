@@ -52,9 +52,9 @@ After that is done open up the terminal on your computer and type ``ssh user@192
 sudo apt update && sudo apt upgrade && sudo apt install curl
 ```
 This command that you can now copy and paste into the terminal checks for any system updates and applies them if any are found, it also installs a program called ``curl`` that will help in a minute
-``
+```
 curl -fsSL https://get.casaos.io | sudo bash
-``
+```
 This installs the CasaOS web interface and Docker
 ```
 reboot
@@ -70,5 +70,7 @@ This Web GUI allows you to install some Docker containers easily from the app st
 To prepare for future guides where the Docker apps aren't part of the CasaOS app store we will manually install them through portainer so install that and setup a username and password.
 
 Congrats! You have just laid the foundation for having the ultimate home server!
+
+The next guide will cover how to install Jellyfin on your new server which is found [here](https://github.com/enderpirate98/jellyfin)
 
 This guide was written by enderpirate98 under the GPLv3 but you can freely modify this guide and use it how you like as long as you link back to this page.
